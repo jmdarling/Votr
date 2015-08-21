@@ -11,5 +11,9 @@ angular.module('votr', [])
             votr.listItems.push(votr.listItemText);
             votr.listItemText = '';
         }
+
+        votr.pickItem = function() {
+            votr.selectedItem = votr.listItems[Math.floor(Math.random()*votr.listItems.length)]
+        }
     });
 

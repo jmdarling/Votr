@@ -16,6 +16,12 @@
     <ul>
         <li ng-repeat="listItem in votr.listItems track by $index">{{listItem}}</li>
     </ul>
+
+    <form ng-submit="votr.pickItem()">
+        <input type="submit">
+    </form>
+
+    <p>{{ votr.selectedItem }}</p>
 </div>
 </body>
 </html>
