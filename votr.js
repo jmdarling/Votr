@@ -8,8 +8,10 @@ angular.module('votr', [])
         ];
 
         votr.addListItem = function() {
-            votr.listItems.push(votr.listItemText);
-            votr.listItemText = '';
+            if(votr.listItemText != '') {
+                votr.listItems.push(votr.listItemText);
+                votr.listItemText = '';
+            }
         }
 
         votr.pickItem = function() {

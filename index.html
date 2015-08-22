@@ -3,25 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <title>Votr</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="votr.css">
     <script src="./bower_components/angular/angular.min.js"></script>
     <script src="votr.js"></script>
 </head>
 <body>
-<div ng-controller="VotrController as votr">
-    <form ng-submit="votr.addListItem()">
-        <input type="text" ng-model="votr.listItemText"/>
-        <input type="submit"/>
-    </form>
+<div class="container" ng-controller="VotrController as votr">
 
-    <ul>
-        <li ng-repeat="listItem in votr.listItems track by $index">{{listItem}}</li>
-    </ul>
+    <div class="col-xs-6 col-xs-offset-3 well">
+        <form class="add-item-form" ng-submit="votr.addListItem()">
+            <div class="input-group">
+                <input class="form-control" type="text" placeholder="Enter an item to add..." ng-model="votr.listItemText"/>
+                <span class="input-group-btn">
+                    <input class="btn btn-default" type="submit" value="Add"/>
+                </span>
+            </div>
+        </form>
 
-    <form ng-submit="votr.pickItem()">
-        <input type="submit">
-    </form>
+        <ul class="list-group">
+            <li class="list-group-item" ng-repeat="listItem in votr.listItems track by $index">{{listItem}}</li>
+        </ul>
 
-    <p>{{ votr.selectedItem }}</p>
+        <form ng-submit="votr.pickItem()">
+            <input class="btn btn-default" type="submit" value="Pick One!">
+        </form>
+
+        <!-- TODO: Highlight the row instead of showing the text. -->
+        <p>{{ votr.selectedItem }}</p>
+    </div>
 </div>
 </body>
 </html>
