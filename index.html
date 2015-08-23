@@ -23,20 +23,15 @@
 
         <ul class="list-group">
 
-            <li class="list-group-item" ng-repeat="listItem in votr.listItems track by $index">
-                <div>
-                    {{listItem}}
-                    <a class="removal-link pull-right glyphicon glyphicon-remove-circle" ng-click="votr.removeListItem($index)"></a>
-                </div>
+            <li class="list-group-item" ng-repeat="listItem in votr.listItems track by $index" ng-class="{selected: listItem === votr.selectedItem}">
+                {{listItem}}
+                <a class="removal-link pull-right glyphicon glyphicon-remove-circle" ng-click="votr.removeListItem($index)"></a>
             </li>
         </ul>
 
         <form ng-submit="votr.pickItem()">
             <input class="btn btn-default" type="submit" value="Pick One!">
         </form>
-
-        <!-- TODO: Highlight the row instead of showing the text. -->
-        <p>{{ votr.selectedItem }}</p>
     </div>
 </div>
 </body>

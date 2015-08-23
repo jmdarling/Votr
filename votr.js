@@ -12,13 +12,17 @@ angular.module('votr', [])
                 votr.listItems.push(votr.listItemText);
                 votr.listItemText = '';
             }
-        }
+        };
 
         votr.removeListItem = function(index) {
+            if(votr.listItems[index] === votr.selectedItem) {
+                votr.selectedItem = null;
+            }
+
             votr.listItems.splice(index, 1);
-        }
+        };
 
         votr.pickItem = function() {
-            votr.selectedItem = votr.listItems[Math.floor(Math.random()*votr.listItems.length)]
-        }
+            votr.selectedItem = votr.listItems[Math.floor(Math.random()*votr.listItems.length)];
+        };
     });
