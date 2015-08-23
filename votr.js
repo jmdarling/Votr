@@ -25,4 +25,8 @@ angular.module('votr', [])
         votr.pickItem = function() {
             votr.selectedItem = votr.listItems[Math.floor(Math.random()*votr.listItems.length)];
         };
+
+        votr.clearList = function() {
+            votr.listItems = [];
+        }
     });

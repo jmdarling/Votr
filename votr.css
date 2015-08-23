@@ -2,6 +2,10 @@
     margin-bottom: 20px;
 }
 
+.list-group {
+    margin-bottom: 5px;
+}
+
 .list-group-item.selected {
     background-color: #FFE856;
 }
@@ -15,4 +19,13 @@
     color: red;
     cursor: pointer;
     text-decoration: none;
+}
+
+.clear-link-wrapper {
+    margin-bottom: 15px;
+    width: 100%;
+}
+
+.clear-link {
+    cursor: pointer;
 }
