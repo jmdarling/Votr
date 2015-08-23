@@ -4,36 +4,41 @@
     <meta charset="UTF-8">
     <title>Votr</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="votr.css">
     <script src="./bower_components/angular/angular.min.js"></script>
     <script src="votr.js"></script>
 </head>
 <body>
-<div class="container" ng-controller="VotrController as votr">
+<div class="app container" >
 
-    <div class="col-xs-6 col-xs-offset-3 well">
-        <form class="add-item-form" ng-submit="votr.addListItem()">
-            <div class="input-group">
-                <input class="form-control" type="text" placeholder="Enter an item to add..." ng-model="votr.listItemText"/>
+    <h1 class="header text-center">Votr</h1>
+
+    <div ng-controller="VotrController as votr">
+        <div class="col-xs-12 col-sm-8 col-sm-offset-2 well col-md-6 col-md-offset-3">
+            <form class="add-item-form" ng-submit="votr.addListItem()">
+                <div class="input-group">
+                    <input class="form-control" type="text" placeholder="Enter an item to add..." ng-model="votr.listItemText"/>
                 <span class="input-group-btn">
                     <input class="btn btn-default" type="submit" value="Add"/>
                 </span>
+                </div>
+            </form>
+
+            <ul class="list-group">
+                <li class="list-group-item" ng-repeat="listItem in votr.listItems track by $index" ng-class="{selected: listItem === votr.selectedItem}">
+                    {{listItem}}
+                    <a class="removal-link pull-right glyphicon glyphicon-remove-circle" ng-click="votr.removeListItem($index)"></a>
+                </li>
+            </ul>
+
+            <div class="clear-link-wrapper">
+                <a class="clear-link pull-right" ng-click="votr.clearList()">Clear</a>
             </div>
-        </form>
 
-        <ul class="list-group">
-            <li class="list-group-item" ng-repeat="listItem in votr.listItems track by $index" ng-class="{selected: listItem === votr.selectedItem}">
-                {{listItem}}
-                <a class="removal-link pull-right glyphicon glyphicon-remove-circle" ng-click="votr.removeListItem($index)"></a>
-            </li>
-        </ul>
+            <button class="btn btn-default" ng-click="votr.pickItem()">Pick One!</button>
 
-        <div class="clear-link-wrapper">
-            <a class="clear-link pull-right" ng-click="votr.clearList()">Clear</a>
         </div>
-
-        <button class="btn btn-default" ng-click="votr.pickItem()">Pick One!</button>
-
     </div>
 </div>
 </body>
