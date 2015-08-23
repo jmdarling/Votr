@@ -1,3 +1,14 @@
 .add-item-form {
     margin-bottom: 20px;
 }
+
+.removal-link {
+    color: red;
+    font-size: 130%;
+}
+
+.removal-link:hover {
+    color: red;
+    cursor: pointer;
+    text-decoration: none;
+}

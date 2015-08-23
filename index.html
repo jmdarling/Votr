@@ -22,7 +22,13 @@
         </form>
 
         <ul class="list-group">
-            <li class="list-group-item" ng-repeat="listItem in votr.listItems track by $index">{{listItem}}</li>
+
+            <li class="list-group-item" ng-repeat="listItem in votr.listItems track by $index">
+                <div>
+                    {{listItem}}
+                    <a class="removal-link pull-right glyphicon glyphicon-remove-circle" ng-click="votr.removeListItem($index)"></a>
+                </div>
+            </li>
         </ul>
 
         <form ng-submit="votr.pickItem()">

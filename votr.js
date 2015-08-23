@@ -14,8 +14,11 @@ angular.module('votr', [])
             }
         }
 
+        votr.removeListItem = function(index) {
+            votr.listItems.splice(index, 1);
+        }
+
         votr.pickItem = function() {
             votr.selectedItem = votr.listItems[Math.floor(Math.random()*votr.listItems.length)]
         }
     });
-
