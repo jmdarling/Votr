@@ -19,9 +19,9 @@
             <form class="add-item-form" ng-submit="votr.addListItem()">
                 <div class="input-group">
                     <input class="form-control" type="text" placeholder="Enter an item to add..." ng-model="votr.listItemText"/>
-                <span class="input-group-btn">
-                    <input class="btn btn-default" type="submit" value="Add"/>
-                </span>
+                    <span class="input-group-btn">
+                        <input class="btn btn-default" type="submit" value="Add"/>
+                    </span>
                 </div>
             </form>
 
@@ -32,11 +32,11 @@
                 </li>
             </ul>
 
-            <div class="clear-link-wrapper">
+            <div class="clear-link-wrapper" ng-if="votr.displayControls()">
                 <a class="clear-link pull-right" ng-click="votr.clearList()">Clear</a>
             </div>
 
-            <button class="btn btn-default" ng-click="votr.pickItem()">Pick One!</button>
+            <button class="btn btn-default" ng-click="votr.pickItem()" ng-if="votr.displayControls()">Pick One!</button>
 
         </div>
     </div>

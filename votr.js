@@ -1,6 +1,7 @@
 angular.module('votr', [])
     .controller('VotrController', function() {
         var votr = this;
+
         votr.listItems = [
             'Chuy\s',
             'Cafe Brazil',
@@ -28,5 +29,9 @@ angular.module('votr', [])
 
         votr.clearList = function() {
             votr.listItems = [];
+        }
+
+        votr.displayControls = function() {
+            return votr.listItems.length > 0;
         }
     });
