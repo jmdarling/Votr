@@ -2,6 +2,11 @@ html, body {
     background-color: #2196F3;
 }
 
+.navbar-brand {
+    color: #FFC107;
+    font-family: 'Lobster', cursive;
+}
+
 .header {
     color: #FFC107;
     font-family: 'Lobster', cursive;

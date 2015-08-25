@@ -9,10 +9,33 @@
     <link rel="stylesheet" href="votr.css">
     <script src="./bower_components/angular/angular.min.js"></script>
     <script src="votr.js"></script>
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 </head>
 <body>
-<div class="app container" >
 
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">Votr</a>
+        </div>
+        <div class="collapse navbar-collapse" id="navbar">
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a id="login-link" data-toggle="modal" data-target="#login-modal" href="#">Sign in</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="app container" >
     <h1 class="header text-center">Votr</h1>
 
     <div ng-controller="VotrController as votr">
@@ -39,6 +62,25 @@
 
             <button class="btn btn-default" ng-click="votr.pickItem()" ng-if="votr.displayControls()">Pick One!</button>
 
+        </div>
+    </div>
+</div>
+
+<!-- Login Modal -->
+<div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="login-modal-label">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="login-modal-label">Sign in</h4>
+            </div>
+            <div class="modal-body">
+                I should really implement this...
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Sign in</button>
+            </div>
         </div>
     </div>
 </div>
